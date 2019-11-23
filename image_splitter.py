@@ -8,9 +8,7 @@ def splitimage(sidepixels, original_img, returnfilename):
     extention = ".png"
     counter = -1
     
-    images = []
     for i in range(0,width,sidepixels):
-        row = []
         for j in range (0,height, sidepixels):
             temp_img = original_img[j:j + sidepixels, i:i+sidepixels]
 
@@ -34,7 +32,7 @@ try:
 except ValueError:
     bail("Nope, has to be an integer. Restart the program")
 print ('Input result name without ".png" extention')
-print ('Result name will be "INPUT.0.png')
+print ('Result name will be "INPUT.0.png"')
 returnfilename = input("")
 original_img = cv2.imread(filename, cv2.IMREAD_UNCHANGED)
 images = splitimage(sidepixels, original_img, returnfilename)
